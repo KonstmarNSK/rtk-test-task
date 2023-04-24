@@ -1,0 +1,1 @@
+alter table links modify short_link varchar2(20);

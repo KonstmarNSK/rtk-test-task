@@ -33,8 +33,9 @@ services:
       - 1521:1521
     volumes:
       - ./oracle_startup_scripts:/opt/oracle/scripts/startup  # makes oracle execute those scripts at startup
-
     image: container-registry.oracle.com/database/express
 
 
-#  docker run --name oracle-db -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=123 -e ORACLE_CHARACTERSET=UTF8 -v /home/konstantin/IdeaProjects/rtk-test-task/linkservice/sql_scripts:/opt/oracle/scripts/startup container-registry.oracle.com/database/express
+# docker run --name oracle-db -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=123 -e ORACLE_CHARACTERSET=UTF8 -v /home/konstantin/IdeaProjects/rtk-test-task/linkservice/sql_scripts:/opt/oracle/scripts/startup container-registry.oracle.com/database/express
+# docker compose build --no-cache
+# docker compose up

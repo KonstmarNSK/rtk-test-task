@@ -1,6 +1,7 @@
 package com.kostya.rtttesttask.linkservice.controller;
 
 import com.kostya.rtttesttask.linksapi.LinkServiceRest;
+import com.kostya.rtttesttask.linksapi.exception.NotFoundException;
 import com.kostya.rtttesttask.linkservice.service.LinksService;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,6 @@ public class RestEndpoint implements LinkServiceRest {
     }
 
     public String getLongLink(String shortLink) {
-        return linksService.getLongLink(shortLink).orElse("Nothing");
+        return linksService.getLongLink(shortLink).orElseThrow(NotFoundException::new);
     }
 }

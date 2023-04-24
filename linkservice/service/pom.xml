@@ -47,6 +47,11 @@
 		</dependency>
 
 
+        <dependency>
+            <groupId>com.kostya.rtttesttask</groupId>
+            <artifactId>linkservice-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 

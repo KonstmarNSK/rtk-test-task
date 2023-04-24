@@ -14,7 +14,8 @@
     </properties>
 
     <modules>
-        <module>linkservice</module>
+        <module>linkservice/service</module>
+        <module>linkservice/api</module>
         <module>redirectservice</module>
     </modules>
 

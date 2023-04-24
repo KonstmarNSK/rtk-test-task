@@ -1,11 +1,11 @@
 package com.kostya.rtttesttask.linkservice.controller;
 
+import com.kostya.rtttesttask.linksapi.LinkServiceRest;
 import com.kostya.rtttesttask.linkservice.service.LinksService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
-public class RestEndpoint {
+public class RestEndpoint implements LinkServiceRest {
 
     private LinksService linksService;
 
@@ -13,13 +13,11 @@ public class RestEndpoint {
         this.linksService = linksService;
     }
 
-    @PostMapping(path = "/")
-    public String saveLink(@RequestParam String longLink) {
+    public String saveLink(String longLink) {
         return linksService.saveLongLink(longLink);
     }
 
-    @GetMapping(path = "/{shortLink}")
-    public String getLongLink(@PathVariable String shortLink) {
+    public String getLongLink(String shortLink) {
         return linksService.getLongLink(shortLink).orElse("Nothing");
     }
 }

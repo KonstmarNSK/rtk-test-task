@@ -5,6 +5,7 @@ import com.kostya.rtttesttask.linkservice.service.LinksService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/")
 public class RestEndpoint implements LinkServiceRest {
 
     private LinksService linksService;

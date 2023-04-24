@@ -1,6 +1,6 @@
 package com.kostya.rtttesttask.linkservice.controller;
 
-import com.kostya.rtttesttask.linkservice.services.LinksService;
+import com.kostya.rtttesttask.linkservice.service.LinksService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

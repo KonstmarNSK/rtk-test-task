@@ -1,4 +1,4 @@
-package com.kostya.rtttesttask.linkservice.entities;
+package com.kostya.rtttesttask.linkservice.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

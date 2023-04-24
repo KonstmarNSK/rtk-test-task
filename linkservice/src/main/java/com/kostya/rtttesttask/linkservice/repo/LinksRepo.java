@@ -1,6 +1,6 @@
-package com.kostya.rtttesttask.linkservice.repos;
+package com.kostya.rtttesttask.linkservice.repo;
 
-import com.kostya.rtttesttask.linkservice.entities.LinksPair;
+import com.kostya.rtttesttask.linkservice.entity.LinksPair;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

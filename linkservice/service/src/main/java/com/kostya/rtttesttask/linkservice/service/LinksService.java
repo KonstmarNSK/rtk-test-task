@@ -34,7 +34,9 @@ public class LinksService {
         longLink = validateLongLink(longLink);
 
         // generated link is guaranteed to be unique since it is just a number from sequence in db
-        String generatedLink = LinkEncoder.encode(repo.getNextLinkNumber(), cfg.getMaxLinkLength()).orElseThrow(LinkRangeOverflowException::new);
+        String generatedLink = LinkEncoder.encode(repo.getNextLinkNumber(), cfg.getMaxLinkLength())
+                .orElseThrow(LinkRangeOverflowException::new);
+
         repo.save(new LinksPair(generatedLink, longLink));
 
         return generatedLink;

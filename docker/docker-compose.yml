@@ -26,6 +26,7 @@ services:
          condition: service_healthy
 
   db-oracle:
+    image: container-registry.oracle.com/database/express
     environment:
       - ORACLE_PWD=123
       - ORACLE_CHARACTERSET=UTF8
@@ -33,9 +34,19 @@ services:
       - 1521:1521
     volumes:
       - ./oracle_startup_scripts:/opt/oracle/scripts/startup  # makes oracle execute those scripts at startup
-    image: container-registry.oracle.com/database/express
 
+#  allure-reports:
+#    image: frankescobar/allure-docker-service
+#    environment:
+#      CHECK_RESULTS_EVERY_SECONDS: NONE
+#      KEEP_HISTORY: 1
+#    ports:
+#      - 5050:5050
+#    volumes:
+#      - ../tests/allure-results:/app/allure-results
+#      - ../tests/allure-reports:/app/default-reports
 
 # docker run --name oracle-db -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=123 -e ORACLE_CHARACTERSET=UTF8 -v /home/konstantin/IdeaProjects/rtk-test-task/linkservice/sql_scripts:/opt/oracle/scripts/startup container-registry.oracle.com/database/express
 # docker compose build --no-cache
 # docker compose up
+# $mvn_bin package -DskipTests && $mvn_bin test -pl tests

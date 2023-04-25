@@ -19,7 +19,7 @@
 
 ## Запуск не через докер:
 
-Сервис коротких ссылок:
+### Сервис коротких ссылок:
 
 > java -DDB_URL=<Путь к БД> -DDB_USER=<пользователь> -DDB_PWD=<пароль> -DSERVER_PORT=<Порт> -jar ./linkservice/service/target/linkservice-0.0.1-SNAPSHOT.jar
 
@@ -31,7 +31,7 @@ SERVER_PORT=8080
 
 Схема в БД должна быть чистая, пользователь должен иметь возможность создавать таблицы и sequence (при запуске работает flyway).
 
-Сервис перенаправления:
+### Сервис перенаправления:
 
 > java -DLINK_SERVICE_URL=<Адрес сервиса коротких ссылок> -DSERVER_PORT=<Порт> -jar ./redirectservice/target/redirectservice-0.0.1-SNAPSHOT.jar
 

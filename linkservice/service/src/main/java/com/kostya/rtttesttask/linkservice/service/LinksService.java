@@ -1,5 +1,6 @@
 package com.kostya.rtttesttask.linkservice.service;
 
+import com.kostya.rtttesttask.linkservice.config.ServiceConfig;
 import com.kostya.rtttesttask.linkservice.entity.LinksPair;
 import com.kostya.rtttesttask.linksapi.exception.LinkTooLongException;
 import com.kostya.rtttesttask.linkservice.repo.LinksRepo;
@@ -15,9 +16,11 @@ import java.util.Optional;
 public class LinksService {
 
     private LinksRepo repo;
+    private ServiceConfig cfg;
 
-    public LinksService(LinksRepo repo) {
+    public LinksService(LinksRepo repo, ServiceConfig cfg) {
         this.repo = repo;
+        this.cfg = cfg;
     }
 
 
@@ -31,7 +34,7 @@ public class LinksService {
         longLink = validateLongLink(longLink);
 
         // generated link is guaranteed to be unique since it is just a number from sequence in db
-        String generatedLink = LinkEncoder.encode(repo.getNextLinkNumber(), 13).orElseThrow(LinkRangeOverflowException::new);
+        String generatedLink = LinkEncoder.encode(repo.getNextLinkNumber(), cfg.getMaxLinkLength()).orElseThrow(LinkRangeOverflowException::new);
         repo.save(new LinksPair(generatedLink, longLink));
 
         return generatedLink;

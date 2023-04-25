@@ -17,3 +17,6 @@ flyway:
 server:
   port: ${SERVER_PORT:8080}
 
+
+
+linkservice.max-link-length: 13

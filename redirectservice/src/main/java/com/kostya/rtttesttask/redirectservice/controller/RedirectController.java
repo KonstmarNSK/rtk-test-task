@@ -24,7 +24,7 @@ public class RedirectController {
     public ResponseEntity<Void> redirect(@PathVariable String shortLink) {
         String longLink = linkServiceClient.getLongLink(shortLink);
 
-        return ResponseEntity.status(HttpStatus.FOUND)
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
                 .location(URI.create(longLink))
                 .build();
     }

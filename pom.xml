@@ -13,10 +13,16 @@
         <maven.compiler.source>17</maven.compiler.source>
     </properties>
 
+
+
     <modules>
+
         <module>linkservice/service</module>
         <module>linkservice/api</module>
+
         <module>redirectservice</module>
+        <module>tests</module>
+
     </modules>
 
 </project>
